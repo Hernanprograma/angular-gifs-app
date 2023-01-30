@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "build": "ng build --output-path dist --base-href /gifs-app/",
+    "build": "ng build",
     "build:github": "npm run delete:docs && npm run build:href && npm run copy:dist",
     "build:href": "ng build --base-href ./",
     "watch": "ng build --watch --configuration development",
@@ -12,7 +12,8 @@
     "delete:docs": "del docs",
     "copy:dist": "copyfiles dist/gifs-app/* ./docs -f",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "build:docs":"ng build --output-path docs --base-href ./"
   },
   "private": true,
   "dependencies": {
